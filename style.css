@@ -1,0 +1,1340 @@
+ /* Import des fonts */
+@font-face {
+    font-family: 'Bubbly';
+    src: url(font/Bubbly-Regular.otf) format('opentype');
+}
+@font-face {
+font-family: 'Bubblegum';
+src: url(font/BubblegumSans-Regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'OceanRoad';
+    src: url(font/Ocean\ Road.otf) format('opentype');
+}
+@font-face {
+    font-family: 'Oceanography';
+    src: url(font/Oceanography-Bold.otf) format('opentype');
+}
+
+/* Fin import font */
+
+/* Animations */
+@keyframes fishadvanced {
+    from {
+      margin-left: 0px;
+    }
+    to {
+        margin-left: 54%;
+    }
+  }
+
+@keyframes fishintermediate {
+    from {
+      margin-left: 0px;
+    }
+    to {
+        margin-left: 28%;
+    }
+  }
+
+  @keyframes turtle1 {
+    from {
+      margin-left: 0px;
+    }
+    to {
+        margin-left: 64%;
+    }
+  }
+  @keyframes turtle2 {
+    from {
+      margin-left: 0px;
+    }
+    to {
+        margin-left: 50%;
+    }
+  }
+/* Fin Animations */
+
+/* Affichage petits écrans */
+@media only screen and (max-width: 767px) {
+body, html {
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/background gradient.png');
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+h1 {
+    font-family: 'Bubbly';
+    font-size: 8vh;
+    text-shadow: 1px 1px 2px white;
+
+}
+
+h2 {
+    font-family: 'Bubbly';
+    font-size: 6vh;
+    text-shadow: 1px 1px 2px white;
+
+}
+h4 {
+    font-family: 'Bubbly';
+    font-size: 4vh;
+    text-shadow: 1px 1px 2px white;
+    margin: 1vh;
+
+}
+.paysage{
+    height: 0px;
+}
+.paysageHorizontal {
+    width: 0%;
+    height: 0%;
+    object-fit: contain;
+    position: relative;
+    top: -50px;
+    z-index: 10;
+}
+.paysageVertical {
+    width: 100%;
+    height: calc(100vh + 50px);
+    position: relative;
+    top: -50px;
+    z-index: 20;
+}
+
+.sousmarrin {
+    position:sticky;
+    width: 0px;
+    height: 0px;
+    top: 0px;
+    background-image: url('images/background gradient.png');
+    z-index: 15;
+}
+.submarine {
+    position: fixed;
+    width: 100%;
+    top: 50vh;
+    right: 0px;
+    z-index: 11;
+}
+.aboutMe {
+    top: -80vh;  
+    position: relative; 
+    color: black;
+    text-align: center;
+    width: 100%  ;
+    z-index: 21;
+    font-family: 'Bubblegum';
+}
+
+.aboutMeText {
+    font-family: 'Bubblegum';
+    font-size: 2vh;
+}
+.education {
+    position: relative;
+    top: -35vh;
+    width: 100%;
+}
+.titre {
+    background-image: url(images/rock.jpg); 
+    width: fit-content;
+    height: fit-content;
+    border-radius: 0px 15px 15px 0px;
+    box-shadow: 10px 1px 5px black;
+    text-shadow: 1px 1px 2px white;
+
+
+
+}
+.liste {
+    text-align: left;
+    list-style-image: linear-gradient(cyan, blue);
+    list-style: none;
+    left: 0px;
+    position: relative;
+    padding-left: 0;
+    z-index: 12;
+    text-shadow: 1px 1px 2px white;
+
+}
+li {
+
+    background-image: url(images/rock.jpg); 
+    width: 70%;
+    height: fit-content;
+    border-radius: 0px 15px 15px 0px;
+    box-shadow: 10px 1px 5px black;
+    text-align: left;
+    margin: 10px;
+    font-family: 'OceanRoad';
+    font-size: 6vw;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.experiences {
+    position: relative;
+    color: black;
+    text-align: center;
+    width: 100%  ;
+    top: -35vh;
+}
+.skills {
+    position: relative;
+    color: black;
+    text-align: center;
+    width: 100%;
+    top: -35vh;
+}
+.tablecontainer {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    background-image: url(images/rock.jpg); 
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 1px 1px 15px rgb(46, 46, 46);
+    position: relative;
+    z-index: 15;
+    margin-bottom: 30px;
+
+}
+
+.skillsTable {
+    flex: 80%;
+    font-size: calc(15px + 0.5vw);
+    table-layout:fixed;
+}
+.languageTable {
+    flex: 80%;
+    font-size: calc(15px + 0.5vw);
+    table-layout:fixed;
+}
+caption {
+    font-family: 'Bubbly';
+    margin: 10px;
+    text-shadow: 1px 1px 2px white;
+
+}
+th { 
+    font-family: 'Oceanography';
+    text-shadow: 1px 1px 2px white;
+    font-size: 4vw;
+
+}
+td {
+    font-family: 'Oceanography';
+    margin: 15px;
+    padding: 15px;
+    text-shadow: 1px 1px 2px white;
+}
+
+.fish {
+    animation-name: fishadvanced;
+    animation-fill-mode: forwards;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    position: absolute;
+    top: 35%;
+    left: 30%;
+    z-index: 11;
+    width: 10%;
+    filter : drop-shadow(5px 2px 10px black);
+}
+.fish2 {
+    animation-name: fishadvanced;
+    animation-fill-mode: forwards;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    position: absolute;
+    top: 55%;
+    left: 30%;
+    z-index: 11;
+    width: 10%;
+    filter : drop-shadow(5px 2px 10px black);
+
+}
+.fish3 {
+    animation-name: fishintermediate;
+    animation-fill-mode: forwards;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    position: absolute;
+    top: 80%;
+    left: 30%;
+    z-index: 11;
+    width: 10%;
+    filter : drop-shadow(5px 2px 10px black);
+
+}
+.turtle1 {
+    animation-name: turtle1;
+    animation-fill-mode: forwards;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    position: absolute;
+    top: 35%;
+    left: 25%;
+    z-index: 11;
+    width: 10%;
+    filter : drop-shadow(5px 2px 10px black);
+
+}
+.turtle2 {
+    animation-name: turtle2;
+    animation-fill-mode: forwards;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    position: absolute;
+    top: 65%;
+    left: 25%;
+    z-index: 11;
+    width: 10%;
+    filter : drop-shadow(5px 2px 10px black);
+
+}
+.languages {
+    position: relative;
+    color: black;
+    text-align: center;
+    width: 100%  ;
+    top: -35vh;
+}
+.hobies {
+    position: relative;
+    color: black;
+    text-align: center;
+    width: 100%  ;
+    top: -35vh;
+}
+.graphiste {
+    background-image: url(images/rock.jpg); 
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 1px 1px 15px rgb(46, 46, 46);
+    width: 100%;
+    height: 100%;
+    bottom: 0vh;
+    position: relative;
+    top: 5vh;
+    z-index: 15;
+    padding-bottom: 2vh;
+}
+.drawingContainer {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    grid-gap: 1px;
+    position:relative;
+    z-index: 16;
+    background-color: #acacbc;
+    border: 2px solid #acacbc ;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 1px 1px 15px rgb(46, 46, 46);
+    overflow: hidden;
+
+}
+.drawing1 {
+    grid-row: 1;
+    grid-column: 1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.drawing2 {
+    grid-row: 1;
+    grid-column: 2;
+    width: 100%;
+    height: 100%;
+}
+.drawing3 {
+    grid-row: 2;
+    grid-column: 1;
+    width: 100%;
+    height: 100%;
+}
+.drawing4 {
+    grid-row: 2;
+    grid-column: 2;
+    width: 100%;
+    height: 100%;
+}
+.songsContainer {
+    background-image: url(images/rock.jpg); 
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 1px 1px 15px rgb(46, 46, 46);
+    width: 100%;
+    height: 100%;
+    bottom: 0vh;
+    position: relative;
+    top: 5vh;
+    z-index: 15;
+    padding-bottom: 2vh;
+}
+
+.videoContainer {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 20% 20% 20%;
+    grid-gap: 1px;
+    position:relative;
+    z-index: 16;
+    background-color: #acacbc;
+    border: 2px solid #acacbc ;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 1px 1px 15px rgb(46, 46, 46);
+    overflow: hidden;
+
+}
+.contact {
+    position: relative;
+    color: black;
+    text-align: center;
+    width: 100%;
+    top: -25vh;
+    text-shadow: 1px 1px 2px white;
+
+}
+
+.contactContainer {
+    background-image: url(images/rock.jpg); 
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 1px 1px 15px rgb(46, 46, 46);
+    width: 100%;
+    height: 100%;
+    bottom: 0vh;
+    position: relative;
+    top: 0vh;
+    z-index: 15;
+}
+
+input {
+    background-color: white;
+    width: 80%;
+    box-shadow: 1px 1px 15px rgb(46, 46, 46);
+    margin: 10px;
+    border: 1px solid black;
+    text-shadow: 1px 1px 2px white;
+    padding: 10px;
+
+}
+textarea {
+    background-color: white;
+    width: 80%;
+    box-shadow: 1px 1px 15px rgb(46, 46, 46);
+    margin: 10px;
+    border: 1px solid black;
+    text-shadow: 1px 1px 2px white;
+    padding: 10px;
+
+}
+.myButton{
+    cursor:pointer;
+    border:none;
+    width:70%;
+    height:70%;
+    background-color: transparent;
+    filter : drop-shadow(5px 2px 5px black);
+}
+::placeholder {
+    color: black;
+    font-size: 4vw;
+    text-shadow: 1px 1px 2px white;
+    text-align: center;
+    font-family: 'Bubblegum';
+
+  }
+
+.fondOcean {
+    width: 100%;
+    height: 100%;
+}
+
+.fond {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    bottom: -1vh;
+    z-index: 20;
+}
+
+.footerText {
+    font-family: 'Bubblegum';
+    font-size: 3vh;
+    text-align: center;
+}
+
+
+}
+
+/* Fin affichage petits écrans */
+/* Affichage écrans moyens */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    body, html {
+        margin: 0px;
+        width: 100%;
+        height: 100%;
+        background-image: url('images/background gradient.png');
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+    
+    h1 {
+        font-family: 'Bubbly';
+        font-size: 8vh;
+        text-shadow: 1px 1px 2px white;
+    
+    }
+    
+    h2 {
+        font-family: 'Bubbly';
+        font-size: 6vh;
+        text-shadow: 1px 1px 2px white;
+    
+    }
+    h4 {
+        font-family: 'Bubbly';
+        font-size: 4vh;
+        text-shadow: 1px 1px 2px white;
+        margin: 1vh;
+    
+    }
+    .paysage{
+        height: 0px;
+    }
+    .paysageHorizontal {
+
+        width: 0%;
+        height: 0%;
+        object-fit: contain;
+        position: relative;
+        top: -50px;
+        z-index: 10;
+    }
+    .paysageVertical {
+        width: 100%;
+        height: calc(100vh + 50px);
+        position: relative;
+        top: -50px;
+        z-index: 20;
+    }
+    
+    .sousmarrin {
+        position:sticky;
+        width: 0px;
+        height: 0px;
+        top: 0px;
+        background-image: url('images/background gradient.png');
+        z-index: 15;
+    }
+    .submarine {
+        position: fixed;
+        width: 100%;
+        top: 50vh;
+        right: 0px;
+        z-index: 11;
+    }
+    .aboutMe {
+        top: -80vh;  
+        position: relative; 
+        color: black;
+        text-align: center;
+        width: 100%  ;
+        z-index: 21;
+        font-family: 'Bubblegum';
+    }
+    
+    .aboutMeText {
+        font-family: 'Bubblegum';
+        font-size: 2vh;
+    }
+    .education {
+        position: relative;
+        top: -35vh;
+        width: 100%;
+    }
+    .titre {
+        background-image: url(images/rock.jpg); 
+        width: fit-content;
+        height: fit-content;
+        border-radius: 0px 15px 15px 0px;
+        box-shadow: 10px 1px 5px black;
+        text-shadow: 1px 1px 2px white;
+    
+    
+    
+    }
+    .liste {
+        text-align: left;
+        list-style-image: linear-gradient(cyan, blue);
+        list-style: none;
+        left: 0px;
+        position: relative;
+        padding-left: 0;
+        z-index: 12;
+        text-shadow: 1px 1px 2px white;
+    
+    }
+    li {
+    
+        background-image: url(images/rock.jpg); 
+        width: 70%;
+        height: fit-content;
+        border-radius: 0px 15px 15px 0px;
+        box-shadow: 10px 1px 5px black;
+        text-align: left;
+        margin: 10px;
+        font-family: 'OceanRoad';
+        font-size: 6vw;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    .experiences {
+        position: relative;
+        color: black;
+        text-align: center;
+        width: 100%  ;
+        top: -35vh;
+    }
+    .skills {
+        position: relative;
+        color: black;
+        text-align: center;
+        width: 100%;
+        top: -35vh;
+    }
+    .tablecontainer {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        background-image: url(images/rock.jpg); 
+        border-radius: 20px 20px 20px 20px;
+        box-shadow: 1px 1px 15px rgb(46, 46, 46);
+        position: relative;
+        z-index: 15;
+        margin-bottom: 30px;
+        padding-top: 2vw;
+        padding-bottom: 2vw;
+    }
+    
+    .skillsTable {
+        flex: 80%;
+        font-size: calc(15px + 0.5vw);
+        table-layout:fixed;
+    }
+    .languageTable {
+        flex: 80%;
+        font-size: calc(15px + 0.5vw);
+        table-layout:fixed;
+    }
+    caption {
+        font-family: 'Bubbly';
+        margin: 10px;
+        text-shadow: 1px 1px 2px white;
+    
+    }
+    th { 
+        font-family: 'Oceanography';
+        text-shadow: 1px 1px 2px white;
+        font-size: 4vw;
+    
+    }
+    td {
+        font-family: 'Oceanography';
+        margin: 15px;
+        padding: 15px;
+        text-shadow: 1px 1px 2px white;
+    }
+    
+    .fish {
+        animation-name: fishadvanced;
+        animation-fill-mode: forwards;
+        animation-duration: 5s;
+        animation-iteration-count: 1;
+        position: absolute;
+        top: 35%;
+        left: 30%;
+        z-index: 11;
+        width: 10%;
+        filter : drop-shadow(5px 2px 10px black);
+    }
+    .fish2 {
+        animation-name: fishadvanced;
+        animation-fill-mode: forwards;
+        animation-duration: 5s;
+        animation-iteration-count: 1;
+        position: absolute;
+        top: 55%;
+        left: 30%;
+        z-index: 11;
+        width: 10%;
+        filter : drop-shadow(5px 2px 10px black);
+    
+    }
+    .fish3 {
+        animation-name: fishintermediate;
+        animation-fill-mode: forwards;
+        animation-duration: 5s;
+        animation-iteration-count: 1;
+        position: absolute;
+        top: 80%;
+        left: 30%;
+        z-index: 11;
+        width: 10%;
+        filter : drop-shadow(5px 2px 10px black);
+    
+    }
+    .turtle1 {
+        animation-name: turtle1;
+        animation-fill-mode: forwards;
+        animation-duration: 5s;
+        animation-iteration-count: 1;
+        position: absolute;
+        top: 35%;
+        left: 25%;
+        z-index: 11;
+        width: 10%;
+        filter : drop-shadow(5px 2px 10px black);
+    
+    }
+    .turtle2 {
+        animation-name: turtle2;
+        animation-fill-mode: forwards;
+        animation-duration: 5s;
+        animation-iteration-count: 1;
+        position: absolute;
+        top: 65%;
+        left: 25%;
+        z-index: 11;
+        width: 10%;
+        filter : drop-shadow(5px 2px 10px black);
+    
+    }
+    .languages {
+        position: relative;
+        color: black;
+        text-align: center;
+        width: 100%  ;
+        top: -35vh;
+    }
+    .hobies {
+        position: relative;
+        color: black;
+        text-align: center;
+        width: 100%  ;
+        top: -35vh;
+    }
+    .graphiste {
+        background-image: url(images/rock.jpg); 
+        border-radius: 20px 20px 20px 20px;
+        box-shadow: 1px 1px 15px rgb(46, 46, 46);
+        width: 100%;
+        height: 100%;
+        bottom: 0vh;
+        position: relative;
+        top: 5vh;
+        z-index: 15;
+        padding-bottom: 2vh;
+    }
+    .drawingContainer {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        grid-gap: 1px;
+        position:relative;
+        z-index: 16;
+        background-color: #acacbc;
+        border: 2px solid #acacbc ;
+        border-radius: 20px 20px 20px 20px;
+        box-shadow: 1px 1px 15px rgb(46, 46, 46);
+        overflow: hidden;
+    
+    }
+    .drawing1 {
+        grid-row: 1;
+        grid-column: 1;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    .drawing2 {
+        grid-row: 1;
+        grid-column: 2;
+        width: 100%;
+        height: 100%;
+    }
+    .drawing3 {
+        grid-row: 2;
+        grid-column: 1;
+        width: 100%;
+        height: 100%;
+    }
+    .drawing4 {
+        grid-row: 2;
+        grid-column: 2;
+        width: 100%;
+        height: 100%;
+    }
+    .songsContainer {
+        background-image: url(images/rock.jpg); 
+        border-radius: 20px 20px 20px 20px;
+        box-shadow: 1px 1px 15px rgb(46, 46, 46);
+        width: 100%;
+        height: 200%;
+        bottom: 0vh;
+        position: relative;
+        top: 5vh;
+        z-index: 15;
+        padding-bottom: 2vh;
+    }
+    
+    .videoContainer {
+        width: 100%;
+        height: 200vh;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 25% 25% 25% 25%;
+        grid-gap: 1px;
+        position:relative;
+        z-index: 16;
+        background-color: #acacbc;
+        border: 2px solid #acacbc ;
+        border-radius: 20px 20px 20px 20px;
+        box-shadow: 1px 1px 15px rgb(46, 46, 46);
+        overflow: hidden;
+    
+    }
+    .contact {
+        position: relative;
+        color: black;
+        text-align: center;
+        width: 100%;
+        top: -25vh;
+        text-shadow: 1px 1px 2px white;
+    
+    }
+    
+    .contactContainer {
+        background-image: url(images/rock.jpg); 
+        border-radius: 20px 20px 20px 20px;
+        box-shadow: 1px 1px 15px rgb(46, 46, 46);
+        width: 100%;
+        height: 100%;
+        bottom: 0vh;
+        position: relative;
+        top: 0vh;
+        z-index: 15;
+    }
+    
+    input {
+        background-color: white;
+        width: 80%;
+        box-shadow: 1px 1px 15px rgb(46, 46, 46);
+        margin: 10px;
+        border: 1px solid black;
+        text-shadow: 1px 1px 2px white;
+        padding: 10px;
+    
+    }
+    textarea {
+        background-color: white;
+        width: 80%;
+        box-shadow: 1px 1px 15px rgb(46, 46, 46);
+        margin: 10px;
+        border: 1px solid black;
+        text-shadow: 1px 1px 2px white;
+        padding: 10px;
+    
+    }
+    .myButton{
+        cursor:pointer;
+        border:none;
+        width:70%;
+        height:70%;
+        background-color: transparent;
+        filter : drop-shadow(5px 2px 5px black);
+    }
+    ::placeholder {
+        color: black;
+        font-size: 4vw;
+        text-shadow: 1px 1px 2px white;
+        text-align: center;
+        font-family: 'Bubblegum';
+    
+      }
+    
+    .fondOcean {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .fond {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        bottom: -1vh;
+        z-index: 20;
+    }
+    
+    .footerText {
+        font-family: 'Bubblegum';
+        font-size: 3vh;
+        text-align: center;
+        bottom: 10vh;
+        position: relative;
+    }
+    
+    
+    }
+    /* Fin affichage Ecrans Moyens*/
+
+/* Affichage grands écrans */
+@media only screen and (min-width: 1024px) {
+    body, html {
+        margin: 0px;
+        width: 100%;
+        height: 100%;
+        background-image: url('images/background gradient.png');
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+    
+    h1 {
+        font-family: 'Bubbly';
+        font-size: 8vh;
+        text-shadow: 1px 1px 2px white;
+    
+    }
+    
+    h2 {
+        font-family: 'Bubbly';
+        font-size: 6vh;
+        text-shadow: 1px 1px 2px white;
+        margin-top: 5vh;
+    
+    }
+    h4 {
+        font-family: 'Bubbly';
+        font-size: 4vh;
+        text-shadow: 1px 1px 2px white;
+        margin: 1vh;
+    
+    }
+    .paysage{
+        height: 0px;
+    }
+    .paysageHorizontal {
+        width: 100%;
+        height: calc(100vh + 50px);
+        position: relative;
+        top: -50px;
+        z-index: 20;
+
+    }
+    .paysageVertical {
+
+        width: 0%;
+        height: 0%;
+        object-fit: contain;
+        position: relative;
+        top: -50px;
+        z-index: 10;
+    }
+    
+    .sousmarrin {
+        position:sticky;
+        width: 0px;
+        height: 0px;
+        top: 0px;
+        background-image: url('images/background gradient.png');
+        z-index: 15;
+    }
+    .submarine {
+        position: fixed;
+        width: 100%;
+        top: 50vh;
+        right: 0px;
+        z-index: 11;
+    }
+    .aboutMe {
+        top: -80vh;  
+        position: relative; 
+        color: black;
+        text-align: center;
+        width: 100%  ;
+        z-index: 21;
+        font-family: 'Bubblegum';
+    }
+    
+    .aboutMeText {
+        font-family: 'Bubblegum';
+        font-size: 2vh;
+    }
+    .education {
+        position: relative;
+        top: -35vh;
+        width: 100%;
+    }
+    .titre {
+        background-image: url(images/rock.jpg); 
+        width: fit-content;
+        height: fit-content;
+        border-radius: 0px 15px 15px 0px;
+        box-shadow: 10px 1px 5px black;
+        text-shadow: 1px 1px 2px white;
+    
+    
+    
+    }
+    .liste {
+        text-align: left;
+        list-style-image: linear-gradient(cyan, blue);
+        list-style: none;
+        left: 0px;
+        position: relative;
+        padding-left: 0;
+        z-index: 12;
+        text-shadow: 1px 1px 2px white;
+    
+    }
+    li {
+    
+        background-image: url(images/rock.jpg); 
+        width: 70%;
+        height: fit-content;
+        border-radius: 0px 15px 15px 0px;
+        box-shadow: 10px 1px 5px black;
+        text-align: left;
+        margin: 10px;
+        font-family: 'OceanRoad';
+        font-size: 3vw;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    .experiences {
+        position: relative;
+        color: black;
+        text-align: center;
+        width: 100%  ;
+        top: -35vh;
+    }
+    .skills {
+        position: relative;
+        color: black;
+        text-align: center;
+        width: 100%;
+        top: -35vh;
+    }
+    .tablecontainer {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        background-image: url(images/rock.jpg); 
+        border-radius: 20px 20px 20px 20px;
+        box-shadow: 1px 1px 15px rgb(46, 46, 46);
+        position: relative;
+        z-index: 15;
+        margin-bottom: 30px;
+        padding-top: 2vw;
+        padding-bottom: 2vw;
+    }
+    
+    .skillsTable {
+        flex: 80%;
+        font-size: calc(15px + 0.5vw);
+        table-layout:fixed;
+    }
+    .languageTable {
+        flex: 80%;
+        font-size: calc(15px + 0.5vw);
+        table-layout:fixed;
+
+    }
+    .hobies {
+        margin-top: 6vh;
+    }
+    caption {
+        font-family: 'Bubbly';
+        margin: 10px;
+        text-shadow: 1px 1px 2px white;
+        font-size: 2vw;
+    
+    }
+    th { 
+        font-family: 'Oceanography';
+        text-shadow: 1px 1px 2px white;
+        font-size: 4vw;
+    
+    }
+    td {
+        font-family: 'Oceanography';
+        margin: 15px;
+        padding: 5vh;
+        font-size: 2vw;
+        text-shadow: 1px 1px 2px white;
+    }
+    
+    .fish {
+        animation-name: fishadvanced;
+        animation-fill-mode: forwards;
+        animation-duration: 5s;
+        animation-iteration-count: 1;
+        position: absolute;
+        top: 35%;
+        left: 30%;
+        z-index: 11;
+        width: 10%;
+        filter : drop-shadow(5px 2px 10px black);
+    }
+    .fish2 {
+        animation-name: fishadvanced;
+        animation-fill-mode: forwards;
+        animation-duration: 5s;
+        animation-iteration-count: 1;
+        position: absolute;
+        top: 55%;
+        left: 30%;
+        z-index: 11;
+        width: 10%;
+        filter : drop-shadow(5px 2px 10px black);
+    
+    }
+    .grid {
+        position: relative;
+        top: -4vh;
+    }
+    .fish3 {
+        animation-name: fishintermediate;
+        animation-fill-mode: forwards;
+        animation-duration: 5s;
+        animation-iteration-count: 1;
+        position: absolute;
+        top: 75%;
+        left: 30%;
+        z-index: 11;
+        width: 10%;
+        filter : drop-shadow(5px 2px 10px black);
+    
+    }
+    .turtle1 {
+        animation-name: turtle1;
+        animation-fill-mode: forwards;
+        animation-duration: 5s;
+        animation-iteration-count: 1;
+        position: absolute;
+        top: 35%;
+        left: 25%;
+        z-index: 11;
+        width: 10%;
+        filter : drop-shadow(5px 2px 10px black);
+    
+    }
+    .turtle2 {
+        animation-name: turtle2;
+        animation-fill-mode: forwards;
+        animation-duration: 5s;
+        animation-iteration-count: 1;
+        position: absolute;
+        top: 65%;
+        left: 25%;
+        z-index: 11;
+        width: 10%;
+        filter : drop-shadow(5px 2px 10px black);
+    
+    }
+    .languages {
+        position: relative;
+        color: black;
+        text-align: center;
+        width: 100%;
+        top: -35vh;
+    }
+    .hobies {
+        position: relative;
+        color: black;
+        text-align: center;
+        width: 100%  ;
+        top: -35vh;
+    }
+    .graphiste {
+        background-image: url(images/rock.jpg); 
+        border-radius: 20px 20px 20px 20px;
+        box-shadow: 1px 1px 15px rgb(46, 46, 46);
+        width: 100%;
+        height: 100%;
+        bottom: 0vh;
+        position: relative;
+        top: 5vh;
+        z-index: 15;
+        padding-bottom: 2vh;
+    }
+    .drawingContainer {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        grid-gap: 1px;
+        position:relative;
+        z-index: 16;
+        background-color: #acacbc;
+        border: 2px solid #acacbc ;
+        border-radius: 20px 20px 20px 20px;
+        box-shadow: 1px 1px 15px rgb(46, 46, 46);
+        overflow: hidden;
+    
+    }
+    .drawing1 {
+        grid-row: 1;
+        grid-column: 1;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    .drawing2 {
+        grid-row: 1;
+        grid-column: 2;
+        width: 100%;
+        height: 100%;
+    }
+    .drawing3 {
+        grid-row: 2;
+        grid-column: 1;
+        width: 100%;
+        height: 100%;
+    }
+    .drawing4 {
+        grid-row: 2;
+        grid-column: 2;
+        width: 100%;
+        height: 100%;
+    }
+    .songsContainer {
+        background-image: url(images/rock.jpg); 
+        border-radius: 20px 20px 20px 20px;
+        box-shadow: 1px 1px 15px rgb(46, 46, 46);
+        width: 100%;
+        height: 200%;
+        bottom: 0vh;
+        position: relative;
+        top: 5vh;
+        z-index: 15;
+        padding-bottom: 2vh;
+        margin-top: 10vh;
+    }
+    
+    .videoContainer {
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50% ;
+        grid-gap: 1px;
+        position:relative;
+        z-index: 16;
+        background-color: #acacbc;
+        border: 2px solid #acacbc ;
+        border-radius: 20px 20px 20px 20px;
+        box-shadow: 1px 1px 15px rgb(46, 46, 46);
+        overflow: hidden;
+    
+    }
+    .contact {
+        position: relative;
+        color: black;
+        text-align: center;
+        width: 50%;
+        top: -25vh;
+        text-shadow: 1px 1px 2px white;
+        left: 25%;
+        z-index: 15;
+    
+    }
+    
+    .contactContainer {
+        background-image: url(images/rock.jpg); 
+        border-radius: 20px 20px 20px 20px;
+        box-shadow: 1px 1px 15px rgb(46, 46, 46);
+        width: 100%;
+        height: 90vh;
+        bottom: 0vh;
+        position: relative;
+        top: 0vh;
+        z-index: 15;
+    }
+    
+    input {
+        background-color: white;
+        width: 80%;
+        height: 6vh;
+        box-shadow: 1px 1px 15px rgb(46, 46, 46);
+        margin: 10px;
+        border: 1px solid black;
+        text-shadow: 1px 1px 2px white;
+        padding: 10px;
+        font-size: 3vw;
+    
+    }
+    textarea {
+        background-color: white;
+        width: 80%;
+        height: 10vh;
+        box-shadow: 1px 1px 15px rgb(46, 46, 46);
+        margin: 10px;
+        border: 1px solid black;
+        text-shadow: 1px 1px 2px white;
+        padding: 10px;
+        font-size: 1.5vw;
+    
+    }
+    .myButton{
+        cursor:pointer;
+        border:none;
+        width:70%;
+        height:70%;
+        background-color: transparent;
+        filter : drop-shadow(5px 2px 5px black);
+    }
+    ::placeholder {
+        color: black;
+        font-size: 4vw;
+        text-shadow: 1px 1px 2px white;
+        text-align: center;
+        font-family: 'Bubblegum';
+    
+      }
+    
+    .fondOcean {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .fond {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        bottom: -1vh;
+        z-index: 10;
+    }
+    
+    .footerText {
+        font-family: 'Bubblegum';
+        font-size: 5vh;
+        text-align: center;
+        bottom: -20vh;
+        position: relative;
+    }
+
+    
+    }
+    /* Fin affichage Grands Ecrans */
